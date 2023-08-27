@@ -1,5 +1,11 @@
+import {
+	clearValue,
+	decrement,
+	increment,
+	updateByValue,
+} from "../features/counterSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, updateByValue } from "../features/counterSlice";
+
 import { useState } from "react";
 
 const Counter = () => {
@@ -12,9 +18,13 @@ const Counter = () => {
 	const decrementHandler = () => {
 		dispatch(decrement());
 	};
-	const updateByX=() => { 
-               dispatch(updateByValue(input));
-	}
+	const updateByX = () => {
+		dispatch(updateByValue(input));
+	};
+	const clearCountValue = () => {
+		dispatch(clearValue());
+	};
+	
 	return (
 		<div>
 			<button onClick={incrementHandler}>Increment</button>
@@ -26,6 +36,7 @@ const Counter = () => {
 				onChange={(e) => setInput(e.target.value)}
 			/>
 			<button onClick={updateByX}>Update by {input}</button>
+			<button onClick={clearCountValue}>Clear Count Value</button>
 		</div>
 	);
 };

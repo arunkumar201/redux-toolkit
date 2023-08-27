@@ -5,8 +5,8 @@ function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<h1>Hello,Welcome to Redux Toolkit page</h1>} />
-
 			<Route path="/counter" element={<Counter />} />
+			
 		</Routes>
 	);
 }
